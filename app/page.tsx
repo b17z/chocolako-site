@@ -1,13 +1,14 @@
 import { Hero } from "@/components/sections/Hero"
 import { Problem } from "@/components/sections/Problem"
+import { Pathways } from "@/components/sections/Pathways"
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <Problem />
-      {/* More sections coming */}
-      <div className="h-screen bg-bone" />
+      <Pathways />
+      <div className="h-screen bg-espresso" />
     </main>
   )
 }
