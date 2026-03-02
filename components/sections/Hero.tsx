@@ -31,25 +31,41 @@ export function Hero() {
         {/* Layered gradient for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-espresso/80 via-espresso/60 to-espresso" />
 
-        {/* Radial glow - doorway effect */}
+        {/* Radial glow - doorway effect - MORE VISIBLE */}
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0"
           style={{
-            background: "radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.15) 0%, transparent 50%)",
+            background: "radial-gradient(ellipse 80% 50% at 50% 30%, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0.1) 30%, transparent 60%)",
           }}
         />
 
-        {/* Secondary ambient glow */}
+        {/* Secondary ambient glows - STRONGER */}
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0"
           style={{
-            background: "radial-gradient(ellipse at 30% 70%, rgba(139,90,43,0.2) 0%, transparent 40%), radial-gradient(ellipse at 70% 60%, rgba(74,93,35,0.15) 0%, transparent 40%)",
+            background: "radial-gradient(ellipse at 20% 80%, rgba(139,90,43,0.3) 0%, transparent 40%), radial-gradient(ellipse at 80% 70%, rgba(74,93,35,0.25) 0%, transparent 40%)",
+          }}
+        />
+
+        {/* Animated pulsing glow behind content */}
+        <motion.div
+          className="absolute inset-0"
+          animate={{
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            background: "radial-gradient(circle at 50% 50%, rgba(212,175,55,0.15) 0%, transparent 40%)",
           }}
         />
       </motion.div>
 
-      {/* Floating particles */}
-      <ParticleField count={25} />
+      {/* Floating particles - MORE */}
+      <ParticleField count={40} />
 
       {/* Content */}
       <motion.div
@@ -62,7 +78,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gold uppercase tracking-[0.3em] text-sm mb-6"
           style={{
-            textShadow: "0 0 20px rgba(212,175,55,0.3)",
+            textShadow: "0 0 30px rgba(212,175,55,0.6), 0 0 60px rgba(212,175,55,0.3)",
           }}
         >
           Somatic Feminine Intelligence
@@ -71,7 +87,7 @@ export function Hero() {
         <GlowText
           as="h1"
           className="font-serif text-4xl md:text-6xl lg:text-7xl text-bone leading-tight"
-          glowColor="rgba(212, 175, 55, 0.2)"
+          glowColor="rgba(212, 175, 55, 0.4)"
         >
           <AnimatedText
             as="span"
@@ -103,7 +119,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="bg-gold hover:bg-gold/90 text-espresso font-medium px-8 shadow-lg shadow-gold/20"
+              className="bg-gold hover:bg-gold/90 text-espresso font-medium px-8 shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] transition-shadow"
             >
               Enter Innergy
             </Button>

@@ -26,7 +26,7 @@ export function GlowText({
       <Component
         className={className}
         style={{
-          textShadow: `0 0 30px ${glowColor}, 0 0 60px ${glowColor}`,
+          textShadow: `0 0 40px ${glowColor}, 0 0 80px ${glowColor}, 0 0 120px ${glowColor}`,
         }}
       >
         {children}
@@ -38,10 +38,10 @@ export function GlowText({
     <MotionComponent
       className={className}
       initial={{
-        textShadow: `0 0 0px transparent, 0 0 0px transparent`,
+        textShadow: `0 0 0px transparent, 0 0 0px transparent, 0 0 0px transparent`,
       }}
       whileInView={{
-        textShadow: `0 0 30px ${glowColor}, 0 0 60px ${glowColor}`,
+        textShadow: `0 0 40px ${glowColor}, 0 0 80px ${glowColor}, 0 0 120px ${glowColor}`,
       }}
       viewport={{ once: true }}
       transition={{ duration: 1.5, ease: "easeOut" }}

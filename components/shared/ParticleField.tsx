@@ -28,10 +28,10 @@ export function ParticleField({ count = 20, className = "" }: ParticleFieldProps
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
-      duration: Math.random() * 20 + 15,
-      delay: Math.random() * 5,
-      opacity: Math.random() * 0.4 + 0.1,
+      size: Math.random() * 8 + 4, // Larger: 4-12px instead of 2-6px
+      duration: Math.random() * 15 + 10, // Faster: 10-25s instead of 15-35s
+      delay: Math.random() * 3,
+      opacity: Math.random() * 0.5 + 0.3, // More visible: 0.3-0.8 instead of 0.1-0.5
     }))
     setParticles(generated)
   }, [count])
@@ -51,13 +51,14 @@ export function ParticleField({ count = 20, className = "" }: ParticleFieldProps
             top: `${particle.y}%`,
             width: particle.size,
             height: particle.size,
-            background: `radial-gradient(circle, rgba(212,175,55,${particle.opacity}) 0%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(212,175,55,${particle.opacity}) 0%, rgba(212,175,55,${particle.opacity * 0.5}) 40%, transparent 70%)`,
+            boxShadow: `0 0 ${particle.size * 2}px rgba(212,175,55,${particle.opacity * 0.6})`,
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, Math.sin(particle.id) * 20, 0],
-            opacity: [particle.opacity, particle.opacity * 1.5, particle.opacity],
-            scale: [1, 1.2, 1],
+            y: [0, -50, 0],
+            x: [0, Math.sin(particle.id) * 30, 0],
+            opacity: [particle.opacity, particle.opacity * 1.3, particle.opacity],
+            scale: [1, 1.4, 1],
           }}
           transition={{
             duration: particle.duration,

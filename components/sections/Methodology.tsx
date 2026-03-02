@@ -40,30 +40,34 @@ const pillars: Pillar[] = [
   },
 ]
 
-// Sacred geometry SVG icons
+// Sacred geometry SVG icons - BOLDER
 const icons = {
   science: (
-    <svg viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-      <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
-      <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.7" />
-      <circle cx="50" cy="50" r="3" fill="currentColor" opacity="0.8" />
+    <svg viewBox="0 0 100 100" className="w-20 h-20 md:w-24 md:h-24">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+      <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+      <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.8" />
+      <circle cx="50" cy="50" r="4" fill="currentColor" opacity="1" />
+      {/* Pulsing center glow */}
+      <circle cx="50" cy="50" r="8" fill="currentColor" opacity="0.3" />
     </svg>
   ),
   lineage: (
-    <svg viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-      <path d="M50 25 L75 50 L50 75 L25 50 Z" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
-      <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.7" />
-      <circle cx="50" cy="50" r="3" fill="currentColor" opacity="0.8" />
+    <svg viewBox="0 0 100 100" className="w-20 h-20 md:w-24 md:h-24">
+      <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+      <path d="M50 25 L75 50 L50 75 L25 50 Z" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+      <circle cx="50" cy="50" r="12" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.8" />
+      <circle cx="50" cy="50" r="4" fill="currentColor" opacity="1" />
+      <circle cx="50" cy="50" r="8" fill="currentColor" opacity="0.3" />
     </svg>
   ),
   application: (
-    <svg viewBox="0 0 100 100" className="w-16 h-16 md:w-20 md:h-20">
-      <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.3" />
-      <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
-      <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.7" />
-      <circle cx="50" cy="50" r="3" fill="currentColor" opacity="0.8" />
+    <svg viewBox="0 0 100 100" className="w-20 h-20 md:w-24 md:h-24">
+      <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+      <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+      <circle cx="50" cy="50" r="12" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.8" />
+      <circle cx="50" cy="50" r="4" fill="currentColor" opacity="1" />
+      <circle cx="50" cy="50" r="8" fill="currentColor" opacity="0.3" />
     </svg>
   ),
 }
@@ -136,21 +140,28 @@ export function Methodology() {
                 }}
                 className="relative bg-gradient-to-b from-sand/5 to-transparent p-8 md:p-10 rounded-2xl border border-sand/10 group"
               >
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                {/* Hover glow effect - STRONGER */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{
-                    background: "radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.1) 0%, transparent 70%)",
+                    background: "radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0.1) 40%, transparent 70%)",
+                    boxShadow: "inset 0 1px 0 rgba(212,175,55,0.3)",
+                  }}
+                />
+                {/* Border glow on hover */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    boxShadow: "0 0 30px rgba(212,175,55,0.2), 0 0 60px rgba(212,175,55,0.1)",
                   }}
                 />
 
-                {/* Sacred geometry icon */}
+                {/* Sacred geometry icon - MORE VISIBLE */}
                 <motion.div
-                  className="text-gold/40 mb-6"
+                  className="text-gold mb-6 drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]"
                   animate={shouldReduceMotion ? {} : {
                     rotate: [0, 360],
                   }}
                   transition={{
-                    duration: 60,
+                    duration: 40,
                     repeat: Infinity,
                     ease: "linear",
                   }}

@@ -19,10 +19,11 @@ export function SectionDivider({
 }: SectionDividerProps) {
   const shouldReduceMotion = useReducedMotion()
 
+  // More dramatic curves
   const paths = {
-    wave: "M0,64 C320,120 640,0 960,64 C1280,128 1440,32 1440,32 L1440,0 L0,0 Z",
-    curve: "M0,96 Q720,0 1440,96 L1440,0 L0,0 Z",
-    organic: "M0,64 C200,100 400,20 600,64 C800,108 1000,20 1200,64 C1350,96 1440,48 1440,48 L1440,0 L0,0 Z",
+    wave: "M0,80 C320,140 640,0 960,80 C1280,160 1440,40 1440,40 L1440,0 L0,0 Z",
+    curve: "M0,110 Q720,-20 1440,110 L1440,0 L0,0 Z",
+    organic: "M0,80 C180,120 360,20 540,80 C720,140 900,20 1080,80 C1260,140 1440,60 1440,60 L1440,0 L0,0 Z",
   }
 
   return (
@@ -39,7 +40,7 @@ export function SectionDivider({
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-auto block"
         preserveAspectRatio="none"
-        style={{ minHeight: "60px" }}
+        style={{ minHeight: "80px" }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

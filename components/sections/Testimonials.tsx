@@ -99,8 +99,14 @@ export function Testimonials() {
           }}
         />
 
-        {/* Decorative quote marks */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 text-gold/5 font-serif text-[20rem] leading-none pointer-events-none select-none">
+        {/* Decorative quote marks - MORE VISIBLE */}
+        <div
+          className="absolute top-10 left-1/2 -translate-x-1/2 font-serif text-[25rem] leading-none pointer-events-none select-none"
+          style={{
+            color: "rgba(212,175,55,0.08)",
+            textShadow: "0 0 100px rgba(212,175,55,0.1)",
+          }}
+        >
           &ldquo;
         </div>
 
@@ -117,7 +123,7 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="text-gold uppercase tracking-[0.3em] text-sm mb-12 md:mb-16 text-center"
-              style={{ textShadow: "0 0 20px rgba(212,175,55,0.3)" }}
+              style={{ textShadow: "0 0 30px rgba(212,175,55,0.5), 0 0 60px rgba(212,175,55,0.3)" }}
             >
               Voices of Transformation
             </motion.p>
@@ -137,14 +143,20 @@ export function Testimonials() {
                   {/* Quote */}
                   <blockquote
                     className="font-serif text-xl md:text-2xl lg:text-3xl text-bone leading-relaxed mb-8 md:mb-10 italic"
-                    style={{ textShadow: "0 0 30px rgba(255,255,255,0.1)" }}
+                    style={{ textShadow: "0 0 40px rgba(255,255,255,0.15), 0 0 80px rgba(255,255,255,0.1)" }}
                   >
                     &ldquo;{currentTestimonial.quote}&rdquo;
                   </blockquote>
 
                   {/* Attribution with decorative line */}
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mb-6" />
+                    <div
+                      className="w-20 h-px mb-6"
+                      style={{
+                        background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent)",
+                        boxShadow: "0 0 10px rgba(212,175,55,0.5)",
+                      }}
+                    />
                     <p className="text-gold font-medium text-lg mb-1">
                       {currentTestimonial.name}
                     </p>
