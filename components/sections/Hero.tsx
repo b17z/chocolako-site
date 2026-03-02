@@ -6,6 +6,13 @@ import { Button } from "@/components/ui/button"
 import { AnimatedText } from "@/components/shared/motion"
 import { ParticleField } from "@/components/shared/ParticleField"
 import { GlowText } from "@/components/shared/GlowText"
+import dynamic from "next/dynamic"
+
+// Lazy load 3D component
+const SacredGeometry = dynamic(
+  () => import("@/components/three/SacredGeometry").then((mod) => mod.SacredGeometry),
+  { ssr: false }
+)
 
 export function Hero() {
   const ref = useRef(null)
@@ -64,8 +71,13 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Floating particles - MORE */}
-      <ParticleField count={40} />
+      {/* 3D Sacred Geometry */}
+      <div className="absolute inset-0 opacity-60">
+        <SacredGeometry />
+      </div>
+
+      {/* Floating particles overlay */}
+      <ParticleField count={30} />
 
       {/* Content */}
       <motion.div
