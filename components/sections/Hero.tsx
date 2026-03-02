@@ -75,7 +75,7 @@ export function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="border-bone/30 text-bone hover:bg-bone/10 px-8"
+            className="border-bone text-bone bg-transparent hover:bg-bone hover:text-espresso px-8"
           >
             Explore Programs
           </Button>

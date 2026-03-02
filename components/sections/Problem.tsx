@@ -62,7 +62,7 @@ function ProblemPanel({ problem, isOpen, onToggle, index }: ProblemPanelProps) {
           <h3 className="font-serif text-xl md:text-2xl text-espresso mb-2 group-hover:text-espresso/80 transition-colors">
             {problem.title}
           </h3>
-          <p className="text-sand text-base md:text-lg">{problem.summary}</p>
+          <p className="text-cacao/70 text-base md:text-lg">{problem.summary}</p>
         </div>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
