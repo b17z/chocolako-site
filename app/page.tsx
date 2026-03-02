@@ -6,6 +6,7 @@ import { Methodology } from "@/components/sections/Methodology"
 import { Testimonials } from "@/components/sections/Testimonials"
 import { Founder } from "@/components/sections/Founder"
 import { ShopPreview } from "@/components/sections/ShopPreview"
+import { Footer } from "@/components/sections/Footer"
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <Testimonials />
       <Founder />
       <ShopPreview />
-      <div className="h-screen bg-espresso" />
+      <Footer />
     </main>
   )
 }
