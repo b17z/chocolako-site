@@ -5,6 +5,7 @@ import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor"
 import { Methodology } from "@/components/sections/Methodology"
 import { Testimonials } from "@/components/sections/Testimonials"
 import { Founder } from "@/components/sections/Founder"
+import { ShopPreview } from "@/components/sections/ShopPreview"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Methodology />
       <Testimonials />
       <Founder />
+      <ShopPreview />
       <div className="h-screen bg-espresso" />
     </main>
   )
