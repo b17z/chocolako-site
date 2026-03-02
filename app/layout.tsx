@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { cormorant, inter } from "@/lib/fonts"
+import { Navigation } from "@/components/shared/Navigation"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="font-sans antialiased">
+        <Navigation />
         {children}
       </body>
     </html>
