@@ -72,7 +72,7 @@ export function Hero() {
       </motion.div>
 
       {/* 3D Sacred Geometry */}
-      <div className="absolute inset-0 opacity-60">
+      <div className="absolute inset-0 opacity-35">
         <SacredGeometry />
       </div>
 
