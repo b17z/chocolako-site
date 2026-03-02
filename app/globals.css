@@ -138,3 +138,72 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Ethereal/Otherworldly Effects */
+@layer utilities {
+  /* Glow text effect */
+  .text-glow-gold {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+  }
+
+  .text-glow-soft {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+
+  /* Ambient glow for cards/elements */
+  .glow-ambient {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.1), 0 0 80px rgba(212, 175, 55, 0.05);
+  }
+
+  /* Breathing animation */
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+  }
+
+  /* Slow float animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Slow rotation for sacred geometry */
+  .animate-rotate-slow {
+    animation: rotateSlow 60s linear infinite;
+  }
+
+  @keyframes rotateSlow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(27 52% 46%) 0%, hsl(27 52% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
