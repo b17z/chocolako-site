@@ -147,7 +147,7 @@ export function Navigation() {
           {/* Center Logo */}
           <Link
             href="/"
-            className="absolute left-1/2 -translate-x-1/2 font-serif text-xl md:text-2xl tracking-wide text-warm-brown"
+            className="absolute left-1/2 -translate-x-1/2 font-serif text-base sm:text-xl md:text-2xl tracking-wide text-warm-brown"
           >
             <span className="font-medium">INNERGY BY CHOCOLAKO</span>
             <span className="text-xs align-super">®</span>

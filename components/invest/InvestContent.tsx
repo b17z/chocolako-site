@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { staggerContainer, staggerItem, fadeInUp } from "@/lib/animations"
+import { staggerContainer, staggerItem } from "@/lib/animations"
 import { SectionWrapper } from "@/components/shared/motion"
 
 /* ============================================================
@@ -280,9 +280,9 @@ export function InvestContent() {
               <motion.div
                 key={item.label}
                 variants={staggerItem}
-                className="border border-gold/30 rounded-lg p-6 text-center"
+                className="border border-gold/30 rounded-lg p-4 md:p-6 text-center"
               >
-                <p className="font-serif text-4xl md:text-5xl text-gold mb-2">
+                <p className="font-serif text-3xl md:text-5xl text-gold mb-2">
                   {item.metric}
                 </p>
                 <p className="font-sans text-sm text-bone/90">{item.label}</p>
@@ -462,7 +462,7 @@ export function InvestContent() {
             ))}
           </div>
 
-          <p className="font-serif text-5xl md:text-6xl text-gold text-center mb-4">
+          <p className="font-serif text-4xl md:text-5xl lg:text-6xl text-gold text-center mb-4">
             $200,000 USD
           </p>
           <p className="font-sans text-sand/80 text-center mb-16">
@@ -516,7 +516,7 @@ export function InvestContent() {
           </p>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
