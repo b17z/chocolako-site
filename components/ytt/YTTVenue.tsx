@@ -4,39 +4,10 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { staggerContainer, staggerItem } from "@/lib/animations"
 
-const commitments = [
-  {
-    title: "Human Equilibrium",
-    description:
-      "No aggressive early morning sessions. The pace matches the mountain rhythms. Your nervous system sets the tempo.",
-  },
-  {
-    title: "Community Impact",
-    description:
-      "Meals support local Berber families. A portion of every enrollment funds education for mountain children.",
-  },
-  {
-    title: "Sustainability",
-    description:
-      "Solar power, rainwater harvesting, organic gardens, zero waste practices. The land is honored, not consumed.",
-  },
-]
-
-const amenities = [
-  "Traditional Moroccan architecture",
-  "Mountain views from practice spaces",
-  "Hammam (steam bath)",
-  "Rooftop terraces",
-  "Farm-to-table meals",
-  "Swimming pool",
-  "Tennis court",
-  "Walking distance to Berber villages",
-]
-
 export function YTTVenue() {
   return (
     <section className="bg-sand py-24 md:py-32">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,10 +16,10 @@ export function YTTVenue() {
           className="text-center mb-16"
         >
           <p className="uppercase tracking-[0.2em] text-xs text-gold font-sans mb-4">
-            THE SETTING
+            The Location
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cacao mb-4">
-            Bab Zouina
+            Bab Zouina means The Beautiful Door.
           </h2>
           <p className="font-sans text-base text-cacao/70">
             Ourika Valley, Atlas Mountains, Morocco
@@ -75,44 +46,84 @@ export function YTTVenue() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+          className="space-y-5 mb-16"
         >
-          {commitments.map((item, i) => (
-            <motion.div
-              key={i}
-              variants={staggerItem}
-              className="bg-white rounded-lg p-6 border border-cacao/10"
-            >
-              <h3 className="font-serif text-lg text-cacao mb-2">
-                {item.title}
-              </h3>
-              <p className="font-sans text-sm text-cacao/70 leading-relaxed">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+          <motion.p
+            variants={staggerItem}
+            className="font-sans text-base md:text-lg text-cacao/80 leading-relaxed"
+          >
+            That is what the name means in Moroccan Arabic. And when you arrive,
+            you'll understand why it was named that.
+          </motion.p>
+
+          <motion.p
+            variants={staggerItem}
+            className="font-sans text-base md:text-lg text-cacao/80 leading-relaxed"
+          >
+            Bab Zouina sits at the foot of the Atlas Mountains in the Ourika
+            Valley — surrounded by olive trees, fruit trees, jasmine and
+            bougainvillea, lavender and thyme hedges threading through a garden
+            designed to hold you the moment you walk in. The air here carries
+            the mountains. The light changes four times a day and every time it
+            does, something shifts.
+          </motion.p>
+
+          <motion.p
+            variants={staggerItem}
+            className="font-sans text-base md:text-lg text-cacao/80 leading-relaxed"
+          >
+            The property has two full yoga shalas, equipped for every style of
+            practice you'll move through during the training. There are two
+            rooftops facing the Atlas Mountains where morning practice happens
+            against a sky that reminds you what scale actually feels like. There
+            is a traditional hammam built from marble and Atlas clay that forms
+            part of the ceremonial structure of the week. This is a genuine
+            purification ritual.
+          </motion.p>
+
+          <motion.p
+            variants={staggerItem}
+            className="font-sans text-base md:text-lg text-cacao/80 leading-relaxed"
+          >
+            Three meals per day are prepared from Bab Zouina's own vegetable
+            garden and local Moroccan produce. You eat well, slowly, and with
+            intention. Family style because the communal table is part of the
+            African Way.
+          </motion.p>
+
+          <motion.p
+            variants={staggerItem}
+            className="font-sans text-base md:text-lg text-cacao/80 leading-relaxed"
+          >
+            Bab Zouina was built first as a home. It grew into a retreat
+            facility. That sequence matters. It is held with the warmth of a
+            home — human equilibrium, community, and the kind of care for its
+            land and the surrounding Ourika valley villages that you feel the
+            moment you arrive.
+          </motion.p>
+
+          <motion.p
+            variants={staggerItem}
+            className="font-sans text-base md:text-lg text-cacao/80 leading-relaxed"
+          >
+            It is an hour from Marrakesh. And a world away from everything
+            you're carrying when you land.
+          </motion.p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="uppercase tracking-[0.2em] text-xs text-gold font-sans mb-6">
-            ON THE GROUNDS
+          <p className="font-serif italic text-xl md:text-2xl text-cacao mb-2">
+            You will not leave the same woman who arrived.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {amenities.map((amenity, i) => (
-              <span
-                key={i}
-                className="font-sans text-sm bg-white text-cacao/70 px-4 py-2 rounded-full border border-cacao/10"
-              >
-                {amenity}
-              </span>
-            ))}
-          </div>
+          <p className="font-serif italic text-lg text-rust">
+            Bab Zouina has never let anyone stay the same.
+          </p>
         </motion.div>
       </div>
     </section>
