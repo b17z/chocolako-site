@@ -1,156 +1,124 @@
 "use client"
 
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Instagram, Youtube, Mail } from "lucide-react"
+import Link from "next/link"
 
-const programLinks = [
-  { label: "Masterclass", href: "#" },
-  { label: "SFI Training", href: "#" },
-  { label: "Retreats", href: "#" },
-  { label: "Morphing Membership", href: "#" },
+const navigateLinks = [
+  { label: "In-Person", href: "/in-person" },
+  { label: "Online", href: "/online" },
+  { label: "Shop", href: "/shop" },
+  { label: "Work With Me", href: "/work-with-me" },
+  { label: "Book", href: "/book" },
+  { label: "About", href: "/about" },
+  { label: "Press", href: "/press" },
+  { label: "Contact", href: "/contact" },
 ]
 
-const companyLinks = [
-  { label: "About", href: "#" },
-  { label: "Contact", href: "#" },
-  { label: "Press", href: "#" },
-  { label: "Speaking", href: "#" },
-]
-
-const socialLinks = [
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
-  { icon: Mail, label: "Email", href: "#" },
+const followLinks = [
+  { label: "TikTok", href: "#" },
+  { label: "Facebook", href: "#" },
+  { label: "Instagram @chocolako", href: "#" },
+  { label: "LinkedIn", href: "#" },
+  { label: "YouTube", href: "#" },
+  { label: "Spotify", href: "#" },
+  { label: "Pinterest", href: "#" },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-espresso text-bone">
-      {/* Email Signup Section */}
-      <div className="border-b border-bone/10">
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-          <div className="max-w-xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl mb-4">
-              Receive Transmission Notes
-            </h2>
-            <p className="text-sand/80 mb-8">
-              Essays on embodied leadership, nervous system wisdom, and the
-              feminine path to power.
-            </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-            >
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 bg-bone/10 border-bone/20 text-bone placeholder:text-bone/50 focus-visible:border-gold focus-visible:ring-gold/30"
-              />
-              <Button className="bg-gold hover:bg-gold/90 text-espresso font-medium px-6">
-                Subscribe
-              </Button>
-            </form>
-            <p className="text-sand/60 text-sm mt-4">
-              No spam. Unsubscribe anytime.
-            </p>
-          </div>
-        </div>
+    <footer className="bg-espresso text-bone/80 py-16 px-6 md:px-12 lg:px-24">
+      {/* Subscribe Line */}
+      <div className="border-b border-bone/10 pb-8 mb-12">
+        <p className="text-center text-bone/80">
+          Get transmission notes on embodied presence.{" "}
+          <Link
+            href="#subscribe"
+            className="text-gold hover:text-gold/80 transition font-medium"
+          >
+            Subscribe
+          </Link>
+        </p>
       </div>
 
-      {/* Navigation Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {/* Brand Column */}
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="font-serif text-2xl text-bone">Innergy</h3>
-            <p className="text-gold text-sm mt-1">by Chocolako</p>
-            <p className="text-sand/70 text-sm mt-4 leading-relaxed">
-              Somatic intelligence for the feminine leader.
-            </p>
-          </div>
-
-          {/* Programs Column */}
-          <div>
-            <h4 className="text-gold uppercase tracking-wider text-xs font-medium mb-4">
-              Programs
-            </h4>
-            <ul className="space-y-3">
-              {programLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sand/80 hover:text-bone transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Column */}
-          <div>
-            <h4 className="text-gold uppercase tracking-wider text-xs font-medium mb-4">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sand/80 hover:text-bone transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Connect Column */}
-          <div>
-            <h4 className="text-gold uppercase tracking-wider text-xs font-medium mb-4">
-              Connect
-            </h4>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="text-sand/80 hover:text-gold transition-colors"
+      {/* Three Columns */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Navigate */}
+        <div>
+          <h4 className="text-bone font-medium uppercase tracking-widest text-xs mb-4">
+            Navigate
+          </h4>
+          <p className="text-sm">
+            {navigateLinks.map((link, i) => (
+              <span key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-bone/60 hover:text-gold transition text-sm"
                 >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          </div>
+                  {link.label}
+                </Link>
+                {i < navigateLinks.length - 1 && (
+                  <span className="text-bone/40"> · </span>
+                )}
+              </span>
+            ))}
+          </p>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-bone/10">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sand/60 text-sm">
-              &copy; 2026 Innergy by Chocolako. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="text-sand/60 hover:text-bone transition-colors text-sm"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-sand/60 hover:text-bone transition-colors text-sm"
-              >
-                Terms of Service
-              </a>
-            </div>
-          </div>
+        {/* Follow */}
+        <div>
+          <h4 className="text-bone font-medium uppercase tracking-widest text-xs mb-4">
+            Follow
+          </h4>
+          <p className="text-sm">
+            {followLinks.map((link, i) => (
+              <span key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-bone/60 hover:text-gold transition text-sm"
+                >
+                  {link.label}
+                </Link>
+                {i < followLinks.length - 1 && (
+                  <span className="text-bone/40"> · </span>
+                )}
+              </span>
+            ))}
+          </p>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h4 className="text-bone font-medium uppercase tracking-widest text-xs mb-4">
+            Legal
+          </h4>
+          <p className="text-bone/40 text-xs leading-relaxed">
+            Chocolako&reg;, Somatic Feminine Intelligence&trade; and Womb
+            Wisdom&trade; are registered trademarks of Innergy Global
+            Enterprises, LLC.
+          </p>
+          <p className="text-bone/40 text-xs mt-3">
+            &copy; 2018&ndash;2026 Innergy Global Enterprises, LLC{" "}
+            <span className="text-bone/30"> · </span>
+            <Link
+              href="/privacy"
+              className="text-bone/40 hover:text-gold transition"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-bone/30"> · </span>
+            <Link
+              href="/terms"
+              className="text-bone/40 hover:text-gold transition"
+            >
+              Terms
+            </Link>
+            <span className="text-bone/30"> · </span>
+            <Link
+              href="/press-kit"
+              className="text-bone/40 hover:text-gold transition"
+            >
+              Press Kit
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
