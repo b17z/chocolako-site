@@ -7,14 +7,18 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const inPersonLinks = [
-  { href: "/retreats", label: "Retreats" },
-  { href: "/womb-wisdom-ytt", label: "Womb Wisdom YTT" },
+  { href: "/womb-wisdom-morocco", label: "Womb Wisdom YTT — Morocco (August 2026)" },
+  { href: "/womb-wisdom-bali", label: "Womb Wisdom YTT — Bali (October 2026)" },
+  { href: "/cacao-training", label: "Cacao Ceremony Facilitation Training" },
+  { href: "/sfi-immersions", label: "SFI Immersions and Retreats" },
+  { href: "/speaking", label: "Speaking & Workshops" },
 ]
 
 const onlineLinks = [
-  { href: "/masterclass", label: "Masterclass" },
-  { href: "/sfi-training", label: "SFI Training" },
-  { href: "/morphing-membership", label: "Morphing Membership" },
+  { href: "/morphing", label: "Morphing™ Private Membership" },
+  { href: "/sfi-certification", label: "SFI Masterclasses and Certifications" },
+  { href: "/resources", label: "Resources & Writings" },
+  { href: "/book", label: "Book" },
 ]
 
 interface DropdownMenuProps {
@@ -43,14 +47,14 @@ function DropdownMenu({ label, links, isOpen, onToggle }: DropdownMenuProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 mt-2 min-w-48 bg-espresso/95 backdrop-blur-md rounded-lg border border-sand/10 shadow-lg overflow-hidden"
+            className="absolute top-full left-0 mt-2 min-w-72 bg-white rounded-lg border border-sand shadow-lg overflow-hidden"
           >
             <div className="py-2">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block px-4 py-2 text-sm text-bone/90 hover:text-gold hover:bg-white/5 transition-colors"
+                  className="block px-4 py-2.5 text-sm text-cacao hover:text-gold hover:bg-cream transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -73,9 +77,8 @@ export function Navigation() {
     setIsScrolled(latest > 50)
   })
 
-  // Always use dark background when scrolled for consistent visibility on any section
   const navBgClass = isScrolled
-    ? "bg-espresso/95 backdrop-blur-md shadow-lg border-b border-sand/10"
+    ? "bg-bone/95 backdrop-blur-md shadow-sm"
     : "bg-transparent"
 
   // Close dropdown when clicking outside
@@ -108,7 +111,7 @@ export function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBgClass} text-bone`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBgClass} text-cacao`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -144,9 +147,10 @@ export function Navigation() {
           {/* Center Logo */}
           <Link
             href="/"
-            className="absolute left-1/2 -translate-x-1/2 font-serif text-2xl md:text-3xl tracking-wide"
+            className="absolute left-1/2 -translate-x-1/2 font-serif text-xl md:text-2xl tracking-wide text-warm-brown"
           >
-            <span className="font-medium">Innergy</span>
+            <span className="font-medium">INNERGY BY CHOCOLAKO</span>
+            <span className="text-xs align-super">®</span>
           </Link>
 
           {/* Right Navigation - Desktop */}
@@ -157,15 +161,9 @@ export function Navigation() {
             >
               Shop
             </Link>
-            <Link
-              href="/about"
-              className="text-sm font-medium tracking-wide uppercase hover:text-gold transition-colors"
-            >
-              About
-            </Link>
             <Button
               asChild
-              className="bg-gold text-espresso hover:bg-gold/90 font-medium tracking-wide uppercase text-sm"
+              className="bg-gold text-white hover:bg-gold/90 font-medium tracking-wide uppercase text-sm"
             >
               <Link href="/work-with-me">Work With Me</Link>
             </Button>
@@ -184,12 +182,12 @@ export function Navigation() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-espresso/95 backdrop-blur-md border-t border-sand/10 overflow-hidden"
+            className="lg:hidden bg-bone border-t border-sand overflow-hidden"
           >
             <div className="container mx-auto px-6 py-6 space-y-6">
               {/* In-Person Section */}
               <div className="space-y-3">
-                <p className="text-xs font-medium tracking-widest uppercase text-sand/60">
+                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
                   In-Person
                 </p>
                 <div className="space-y-2">
@@ -198,7 +196,7 @@ export function Navigation() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block text-bone/90 hover:text-gold transition-colors"
+                      className="block text-cacao hover:text-gold transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -208,7 +206,7 @@ export function Navigation() {
 
               {/* Online Section */}
               <div className="space-y-3">
-                <p className="text-xs font-medium tracking-widest uppercase text-sand/60">
+                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
                   Online
                 </p>
                 <div className="space-y-2">
@@ -217,7 +215,7 @@ export function Navigation() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block text-bone/90 hover:text-gold transition-colors"
+                      className="block text-cacao hover:text-gold transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -226,27 +224,20 @@ export function Navigation() {
               </div>
 
               {/* Other Links */}
-              <div className="space-y-2 pt-4 border-t border-sand/10">
+              <div className="space-y-2 pt-4 border-t border-sand">
                 <Link
                   href="/shop"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block text-bone/90 hover:text-gold transition-colors"
+                  className="block text-cacao hover:text-gold transition-colors"
                 >
                   Shop
-                </Link>
-                <Link
-                  href="/about"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-bone/90 hover:text-gold transition-colors"
-                >
-                  About
                 </Link>
               </div>
 
               {/* CTA Button */}
               <Button
                 asChild
-                className="w-full bg-gold text-espresso hover:bg-gold/90 font-medium tracking-wide uppercase text-sm"
+                className="w-full bg-gold text-white hover:bg-gold/90 font-medium tracking-wide uppercase text-sm"
               >
                 <Link href="/work-with-me" onClick={() => setMobileMenuOpen(false)}>
                   Work With Me
