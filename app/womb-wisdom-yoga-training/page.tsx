@@ -3,6 +3,8 @@ import { YTTHero } from "@/components/ytt/YTTHero"
 import { YTTPainPoints } from "@/components/ytt/YTTPainPoints"
 import { YTTFeminineBody } from "@/components/ytt/YTTFeminineBody"
 import { YTTWombCenter } from "@/components/ytt/YTTWombCenter"
+import { YTTOverview } from "@/components/ytt/YTTOverview"
+import { YTTFounder } from "@/components/ytt/YTTFounder"
 import { Footer } from "@/components/sections/Footer"
 
 export const metadata: Metadata = {
@@ -18,6 +20,8 @@ export default function WombWisdomYTTPage() {
       <YTTPainPoints />
       <YTTFeminineBody />
       <YTTWombCenter />
+      <YTTOverview />
+      <YTTFounder />
       <Footer />
     </main>
   )
