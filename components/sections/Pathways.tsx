@@ -3,37 +3,87 @@
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
 import { staggerContainer, staggerItem, reduceMotion } from "@/lib/animations"
-import { Button } from "@/components/ui/button"
 
-interface PathwayCard {
+interface PathCard {
+  number: string
+  label: string
   title: string
-  subtitle: string
+  body: string
+  tagline?: string
+  forLine: string
   price: string
   cta: string
-  featured?: boolean
+  bg: "bg-white" | "bg-cream"
 }
 
-const pathways: PathwayCard[] = [
+const paths: PathCard[] = [
   {
-    title: "The Masterclass",
-    subtitle: "Begin the Journey",
-    price: "$297",
-    cta: "Enroll Now",
-    featured: false,
+    number: "01",
+    label: "LIVE THE PRACTICE EVERY DAY",
+    title: "The Innergy Shop",
+    body: "Ceremonial cacao. Ritual oils. Adornment designed to hold meaning, not just occupy space. Yoga and swimwear for the body you actually live in. Every item in the shop is an extension of the teaching. This is where the journey often quietly begins.",
+    forLine:
+      "The woman ready to bring the practice into her daily life before committing to a full program.",
+    price: "From $45",
+    cta: "→ Shop the Innergy Collection",
+    bg: "bg-white",
   },
   {
-    title: "SFI Training",
-    subtitle: "9-Month Certification",
-    price: "$18,000",
-    cta: "Apply Now",
-    featured: true,
+    number: "02",
+    label: "UNDERSTAND YOUR BODY",
+    title: "Morphing™ Private Membership",
+    body: "Monthly ritual circles, somatic practices, leadership salons, and embodied integration, held inside a private community of women doing this work at depth. Not a content library. A living, breathing container that moves with you.",
+    tagline:
+      "The monthly membership where women evolve — in the body, in community, and in the intelligence of the feminine.",
+    forLine:
+      "The woman who wants ongoing somatic care, embodied community, and monthly nervous system support.",
+    price: "$97/month · Annual membership $997",
+    cta: "→ Join the Morphing™ Waitlist",
+    bg: "bg-cream",
   },
   {
-    title: "Immersions",
-    subtitle: "Transformational Retreats",
-    price: "From $4,500",
-    cta: "View Retreats",
-    featured: false,
+    number: "03",
+    label: "TRANSFORM YOUR PRACTICE",
+    title: "Womb Wisdom & Wellbeing YTT in Morocco",
+    body: "The Yoga Alliance-recognized 200-hour Womb Wisdom & Wellbeing Yoga Teacher Training. 7 days online pre-immersion, 14 days at Bab Zouina in the Ourika Valley, Morocco. August 8-22, 2026. A small cohort by design. The kind of training women describe as their before and after.",
+    forLine:
+      "The woman ready for full immersion, a certification, and the kind of transformation that happens in a room of twenty women in Morocco.",
+    price: "Investment discussed on application call · Payment plans available",
+    cta: "→ Book Your Morocco Application Call",
+    bg: "bg-white",
+  },
+  {
+    number: "03b",
+    label: "TRANSFORM YOUR PRACTICE — BALI",
+    title: "Womb Wisdom & Wellbeing YTT at The Yoga Barn, Bali",
+    body: "The second 200-hour Womb Wisdom & Wellbeing cohort of 2026. October 2026, Ubud, Bali. The Yoga Barn is one of the most respected yoga destinations in the world. Chocolako has taught there for eight years. This is her home. That is not a metaphor.",
+    forLine:
+      "The woman drawn to the energy of Ubud and the world-renowned container of The Yoga Barn.",
+    price: "Investment discussed on application call · Payment plans available",
+    cta: "→ Book Your Bali Application Call",
+    bg: "bg-cream",
+  },
+  {
+    number: "04",
+    label: "LEARN TO HOLD CEREMONY",
+    title: "Cacao Ceremony Facilitation Training",
+    body: "Cacao is not a wellness trend. It is a plant medicine with a lineage, and facilitating ceremony with it requires both reverence and training. This certification gives you the framework, the somatic grounding, and the ritual knowledge to hold safe, transformational cacao ceremonies for women. Offered in-person and online.",
+    forLine:
+      "The woman called to work with ceremonial cacao as a healing, ritual, and community-building practice.",
+    price: "Investment discussed on inquiry · Multiple dates available",
+    cta: "→ Inquire About Cacao Training",
+    bg: "bg-white",
+  },
+  {
+    number: "05",
+    label: "BUILD WITH THIS WORK",
+    title: "Somatic Feminine Intelligence™ Certification",
+    body: "The 6-month SFI Certification Training. Two international immersions. A framework that translates to boardrooms, policy rooms, and wellness practices worldwide. The most comprehensive expression of the Innergy methodology. Built for women who are done leading from depletion.",
+    forLine:
+      "The executive, founder, or changemaker ready to lead from a regulated nervous system and certify in the only methodology that integrates somatic science, womb wisdom, and institutional leadership.",
+    price: "$15,000 – $25,000 · Next cohort: 2027",
+    cta: "→ Apply for the SFI Certification",
+    bg: "bg-cream",
   },
 ]
 
@@ -46,7 +96,7 @@ export function Pathways() {
   const itemVariants = shouldReduceMotion ? reduceMotion : staggerItem
 
   return (
-    <section className="py-24 md:py-32 bg-bone">
+    <section id="paths" className="py-24 md:py-32 bg-bone">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -54,14 +104,26 @@ export function Pathways() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">
-            Your Path Forward
+          <p className="font-serif text-lg md:text-xl font-bold italic text-cacao mb-4">
+            Wealth. Wellness. Worthiness.
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl text-espresso">
-            Choose Your Pathway
+          <p className="font-serif italic text-cacao/80 text-base md:text-lg mb-2">
+            The highest form of wealth is freedom of time, in good health, and
+            at peace with yourself.
+          </p>
+          <p className="font-serif italic text-cacao/80 text-base md:text-lg mb-8">
+            Innergy is where the work of all three begins.
+          </p>
+          <h2 className="font-serif italic text-3xl md:text-5xl text-cacao mb-6">
+            Where do you want to begin?
           </h2>
+          <p className="font-sans text-base text-cacao/70 leading-relaxed">
+            Every woman who finds Innergy comes in through her own door. There
+            is no wrong entry point, only the one that is true for you right
+            now.
+          </p>
         </motion.div>
 
         {/* Cards Grid */}
@@ -70,68 +132,62 @@ export function Pathways() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"
+          className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto"
         >
-          {pathways.map((pathway) => (
+          {paths.map((path) => (
             <motion.div
-              key={pathway.title}
+              key={path.number}
               variants={itemVariants}
-              whileHover={shouldReduceMotion ? {} : { y: -8 }}
-              transition={{ duration: 0.3 }}
-              className={`
-                relative rounded-2xl p-8 flex flex-col
-                ${
-                  pathway.featured
-                    ? "bg-jungle ring-2 ring-gold"
-                    : "bg-sand/50"
-                }
-              `}
+              className={`${path.bg} rounded-lg p-8 border border-cacao/10 flex flex-col`}
             >
-              {/* Featured Badge */}
-              {pathway.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-gold text-espresso text-xs font-medium px-4 py-1 rounded-full">
-                    Most Popular
-                  </span>
-                </div>
+              {/* Number + Label */}
+              <p className="text-gold font-serif text-sm tracking-widest mb-1">
+                {path.number}
+              </p>
+              <p className="text-xs tracking-widest uppercase text-cacao/60 mb-4">
+                {path.label}
+              </p>
+
+              {/* Title */}
+              <h3 className="font-serif text-2xl md:text-3xl text-cacao mb-4">
+                {path.title}
+              </h3>
+
+              {/* Body */}
+              <p className="font-sans text-base leading-relaxed text-cacao/80 mb-4">
+                {path.body}
+              </p>
+
+              {/* Tagline (optional) */}
+              {path.tagline && (
+                <p className="font-serif italic text-cacao/60 text-sm mb-4">
+                  {path.tagline}
+                </p>
               )}
 
-              {/* Card Content */}
-              <div className="flex-1 text-center">
-                <p
-                  className={`text-sm uppercase tracking-wider mb-2 ${
-                    pathway.featured ? "text-sage" : "text-cacao/70"
-                  }`}
-                >
-                  {pathway.subtitle}
-                </p>
-                <h3
-                  className={`font-serif text-2xl md:text-3xl mb-4 ${
-                    pathway.featured ? "text-bone" : "text-espresso"
-                  }`}
-                >
-                  {pathway.title}
-                </h3>
-                <p
-                  className={`text-3xl md:text-4xl font-serif mb-6 ${
-                    pathway.featured ? "text-gold" : "text-cacao"
-                  }`}
-                >
-                  {pathway.price}
-                </p>
-              </div>
+              {/* For line */}
+              <p className="font-serif italic text-cacao/60 text-sm mb-4">
+                <span className="font-sans not-italic font-medium text-cacao/70">
+                  For:
+                </span>{" "}
+                {path.forLine}
+              </p>
 
-              {/* CTA Button */}
-              <Button
-                size="lg"
-                className={`w-full ${
-                  pathway.featured
-                    ? "bg-gold hover:bg-gold/90 text-espresso"
-                    : "bg-cacao hover:bg-cacao/90 text-bone"
-                }`}
-              >
-                {pathway.cta}
-              </Button>
+              {/* Spacer to push price + CTA to bottom */}
+              <div className="mt-auto">
+                {/* Price */}
+                <p className="text-gold font-medium text-sm mb-3">
+                  {path.price}
+                </p>
+
+                {/* CTA */}
+                <a
+                  href="#"
+                  className="text-rust hover:text-gold transition-colors font-medium text-sm"
+                >
+                  {path.cta}
+                </a>
+              </div>
             </motion.div>
           ))}
         </motion.div>
