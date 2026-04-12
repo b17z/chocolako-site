@@ -5,15 +5,17 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Brand colors - Innergy by Chocolako */
-  --color-cacao: hsl(24 35% 27%);
-  --color-espresso: hsl(20 33% 14%);
-  --color-jungle: hsl(144 17% 29%);
-  --color-sage: hsl(118 18% 67%);
-  --color-gold: hsl(27 52% 46%);
-  --color-blush: hsl(18 44% 66%);
-  --color-bone: hsl(38 38% 94%);
-  --color-sand: hsl(30 24% 83%);
+  /* Brand colors — Innergy by Chocolako (Editorial Warm) */
+  --color-cacao: #482b17;
+  --color-espresso: #33281C;
+  --color-warm-brown: #482b17;
+  --color-gold: #a67951;
+  --color-rust: #8B5E3C;
+  --color-bone: #FAF8F5;
+  --color-sand: #EDE8E0;
+  --color-cream: #F5F1EB;
+  --color-sage: #92A05F;
+  --color-jungle: #3B5A47;
 
   /* shadcn/ui theme tokens */
   --color-background: var(--background);
@@ -61,73 +63,37 @@
 
 :root {
   --radius: 0.625rem;
-  /* Brand-themed light mode */
-  --background: hsl(38 38% 94%); /* bone */
-  --foreground: hsl(20 33% 14%); /* espresso */
-  --card: hsl(38 38% 94%); /* bone */
-  --card-foreground: hsl(20 33% 14%); /* espresso */
-  --popover: hsl(38 38% 94%); /* bone */
-  --popover-foreground: hsl(20 33% 14%); /* espresso */
-  --primary: hsl(24 35% 27%); /* cacao */
-  --primary-foreground: hsl(38 38% 94%); /* bone */
-  --secondary: hsl(144 17% 29%); /* jungle */
-  --secondary-foreground: hsl(38 38% 94%); /* bone */
-  --muted: hsl(30 24% 83%); /* sand */
-  --muted-foreground: hsl(24 35% 27%); /* cacao */
-  --accent: hsl(27 52% 46%); /* gold */
-  --accent-foreground: hsl(20 33% 14%); /* espresso */
+  --background: #FAF8F5;
+  --foreground: #482b17;
+  --card: #FFFFFF;
+  --card-foreground: #482b17;
+  --popover: #FFFFFF;
+  --popover-foreground: #482b17;
+  --primary: #482b17;
+  --primary-foreground: #FAF8F5;
+  --secondary: #F5F1EB;
+  --secondary-foreground: #482b17;
+  --muted: #EDE8E0;
+  --muted-foreground: #6B5744;
+  --accent: #a67951;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: hsl(30 24% 83%); /* sand */
-  --input: hsl(30 24% 83%); /* sand */
-  --ring: hsl(27 52% 46%); /* gold */
-  --chart-1: hsl(24 35% 27%); /* cacao */
-  --chart-2: hsl(144 17% 29%); /* jungle */
-  --chart-3: hsl(27 52% 46%); /* gold */
-  --chart-4: hsl(118 18% 67%); /* sage */
-  --chart-5: hsl(18 44% 66%); /* blush */
-  --sidebar: hsl(30 24% 83%); /* sand */
-  --sidebar-foreground: hsl(20 33% 14%); /* espresso */
-  --sidebar-primary: hsl(24 35% 27%); /* cacao */
-  --sidebar-primary-foreground: hsl(38 38% 94%); /* bone */
-  --sidebar-accent: hsl(27 52% 46%); /* gold */
-  --sidebar-accent-foreground: hsl(20 33% 14%); /* espresso */
-  --sidebar-border: hsl(30 24% 83%); /* sand */
-  --sidebar-ring: hsl(27 52% 46%); /* gold */
-}
-
-.dark {
-  /* Brand-themed dark mode */
-  --background: hsl(20 33% 14%); /* espresso */
-  --foreground: hsl(38 38% 94%); /* bone */
-  --card: hsl(24 35% 27%); /* cacao */
-  --card-foreground: hsl(38 38% 94%); /* bone */
-  --popover: hsl(24 35% 27%); /* cacao */
-  --popover-foreground: hsl(38 38% 94%); /* bone */
-  --primary: hsl(38 38% 94%); /* bone */
-  --primary-foreground: hsl(24 35% 27%); /* cacao */
-  --secondary: hsl(144 17% 29%); /* jungle */
-  --secondary-foreground: hsl(38 38% 94%); /* bone */
-  --muted: hsl(24 35% 27%); /* cacao */
-  --muted-foreground: hsl(30 24% 83%); /* sand */
-  --accent: hsl(27 52% 46%); /* gold */
-  --accent-foreground: hsl(20 33% 14%); /* espresso */
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: hsl(24 35% 27% / 50%); /* cacao with transparency */
-  --input: hsl(24 35% 27% / 50%); /* cacao with transparency */
-  --ring: hsl(27 52% 46%); /* gold */
-  --chart-1: hsl(27 52% 46%); /* gold */
-  --chart-2: hsl(118 18% 67%); /* sage */
-  --chart-3: hsl(18 44% 66%); /* blush */
-  --chart-4: hsl(144 17% 29%); /* jungle */
-  --chart-5: hsl(30 24% 83%); /* sand */
-  --sidebar: hsl(24 35% 27%); /* cacao */
-  --sidebar-foreground: hsl(38 38% 94%); /* bone */
-  --sidebar-primary: hsl(27 52% 46%); /* gold */
-  --sidebar-primary-foreground: hsl(20 33% 14%); /* espresso */
-  --sidebar-accent: hsl(144 17% 29%); /* jungle */
-  --sidebar-accent-foreground: hsl(38 38% 94%); /* bone */
-  --sidebar-border: hsl(24 35% 27% / 50%); /* cacao with transparency */
-  --sidebar-ring: hsl(27 52% 46%); /* gold */
+  --border: #E5DED4;
+  --input: #E5DED4;
+  --ring: #a67951;
+  --chart-1: #482b17;
+  --chart-2: #3B5A47;
+  --chart-3: #a67951;
+  --chart-4: #92A05F;
+  --chart-5: #8B5E3C;
+  --sidebar: #F5F1EB;
+  --sidebar-foreground: #482b17;
+  --sidebar-primary: #482b17;
+  --sidebar-primary-foreground: #FAF8F5;
+  --sidebar-accent: #a67951;
+  --sidebar-accent-foreground: #482b17;
+  --sidebar-border: #E5DED4;
+  --sidebar-ring: #a67951;
 }
 
 @layer base {
@@ -139,71 +105,17 @@
   }
 }
 
-/* Ethereal/Otherworldly Effects */
+/* Editorial utilities */
 @layer utilities {
-  /* Glow text effect */
-  .text-glow-gold {
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.2);
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-20 md:py-28 lg:py-36;
   }
 
-  .text-glow-soft {
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  .editorial-narrow {
+    @apply max-w-2xl mx-auto;
   }
 
-  /* Ambient glow for cards/elements */
-  .glow-ambient {
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.1), 0 0 80px rgba(212, 175, 55, 0.05);
-  }
-
-  /* Breathing animation */
-  .animate-breathe {
-    animation: breathe 4s ease-in-out infinite;
-  }
-
-  @keyframes breathe {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.02);
-      opacity: 0.95;
-    }
-  }
-
-  /* Slow float animation */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  /* Slow rotation for sacred geometry */
-  .animate-rotate-slow {
-    animation: rotateSlow 60s linear infinite;
-  }
-
-  @keyframes rotateSlow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Gradient text */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(27 52% 46%) 0%, hsl(27 52% 60%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .editorial-wide {
+    @apply max-w-6xl mx-auto;
   }
 }
