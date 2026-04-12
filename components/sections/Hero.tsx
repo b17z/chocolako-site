@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations"
+import { staggerContainer, staggerItem } from "@/lib/animations"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
