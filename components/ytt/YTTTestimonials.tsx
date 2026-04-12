@@ -6,9 +6,9 @@ import { staggerContainer, staggerItem } from "@/lib/animations"
 const testimonials = [
   {
     quote:
-      "Most teacher trainings are what you do for a certificate. Chocolako&apos;s training is what you do for your life. She teaches you how to live yoga.",
+      "Most teacher trainings are what you do for a certificate. Chocolako's training is what you do for your life. She teaches you how to live yoga.",
     name: "Librette",
-    title: "Mental Health Counselor, Womb Wisdom &amp; Wellbeing YTT, USA",
+    title: "Mental Health Counselor, Womb Wisdom & Wellbeing YTT, USA",
   },
   {
     quote:
@@ -20,7 +20,7 @@ const testimonials = [
     quote:
       "I came to Chocolako running on fumes and calling it leadership. I left with a nervous system that could finally register safety. That shifted everything.",
     name: "Varda",
-    title: "Founder &amp; CEO, Tava Group, Armenia",
+    title: "Founder & CEO, Tava Group, Armenia",
   },
 ]
 

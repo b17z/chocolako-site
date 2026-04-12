@@ -1,19 +1,21 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { staggerContainer, staggerItem } from "@/lib/animations"
 
 export function YTTHero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with warm cacao tones */}
-      <div className="absolute inset-0 bg-cacao">
-        <div className="absolute inset-0 bg-cacao/50" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-sand/40 text-sm tracking-widest uppercase">
-            Photo: Ourika Valley, Morocco
-          </p>
-        </div>
+      {/* Background photo */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/ytt/morocco-hero.jpg"
+          alt="Chocolako on the sand dunes of Morocco"
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
 
       {/* Warm overlay gradient */}

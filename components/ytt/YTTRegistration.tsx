@@ -12,7 +12,7 @@ const steps = [
   },
   {
     number: "02",
-    title: "Book a Call with Chocolako&apos;s Team",
+    title: "Book a Call with Chocolako's Team",
     description:
       "A personal Zoom conversation to answer your questions and ensure this training is right for you.",
   },
@@ -37,7 +37,7 @@ const certificationRequirements = [
   "Ability to study independently and in groups",
   "Full schedule participation (or agreed make-up assignments)",
   "Meaningful practicum contribution",
-  "Complete all Yoga Alliance &amp; Innergy Collective assignments",
+  "Complete all Yoga Alliance & Innergy Collective assignments",
   "Submit feedback and evaluation at completion",
 ]
 

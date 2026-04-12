@@ -5,12 +5,12 @@ import { staggerContainer, staggerItem } from "@/lib/animations"
 
 const schedule = [
   { time: "7:00 – 9:00am", activity: "Morning Embodiment Practice" },
-  { time: "9:00 – 10:00am", activity: "Breakfast &amp; Rest" },
+  { time: "9:00 – 10:00am", activity: "Breakfast & Rest" },
   {
     time: "10:00am – 1:00pm",
-    activity: "Morning Wisdom &mdash; Learning &amp; Integration",
+    activity: "Morning Wisdom — Learning & Integration",
   },
-  { time: "1:00 – 3:00pm", activity: "Lunch &amp; Lounge" },
+  { time: "1:00 – 3:00pm", activity: "Lunch & Lounge" },
   { time: "3:00 – 6:00pm", activity: "Afternoon Wisdom" },
   { time: "6:00 – 7:00pm", activity: "Evening Integration" },
 ]

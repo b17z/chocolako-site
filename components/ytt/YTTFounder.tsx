@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { staggerContainer, staggerItem } from "@/lib/animations"
 
@@ -8,20 +9,20 @@ export function YTTFounder() {
     <section className="bg-cream py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* LEFT: Photo placeholder */}
+          {/* LEFT: Photo */}
           <motion.div
-            className="aspect-[3/4] bg-sand rounded-lg flex flex-col items-center justify-center"
+            className="relative aspect-[3/4] rounded-lg overflow-hidden"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" as const }}
           >
-            <span className="font-serif text-2xl text-cacao">
-              Chocolako Agburu
-            </span>
-            <span className="font-sans text-sm text-cacao/60 mt-2">
-              MPH, MBA, E-RYT 500, YACEP
-            </span>
+            <Image
+              src="/images/ytt/founder.jpg"
+              alt="Chocolako Agburu in a vibrant dance pose"
+              fill
+              className="object-cover"
+            />
           </motion.div>
 
           {/* RIGHT: Bio content */}

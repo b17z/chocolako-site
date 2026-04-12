@@ -4,23 +4,23 @@ import { motion } from "framer-motion"
 import { staggerContainer, staggerItem } from "@/lib/animations"
 
 const included = [
-  "200-hour tuition &amp; certification readiness",
-  "Yoga Alliance &amp; Innergy Collective certification",
+  "200-hour tuition & certification readiness",
+  "Yoga Alliance & Innergy Collective certification",
   "250-page color teaching manual",
-  "Sound healing &amp; cacao ceremony",
-  "Marrakech market tour &amp; sightseeing",
+  "Sound healing & cacao ceremony",
+  "Marrakech market tour & sightseeing",
   "Airport roundtrip transportation",
   "All excursion transportation",
   "Accommodation at Bab Zouina",
-  "Vegetarian/plant-based meals &amp; beverages",
+  "Vegetarian/plant-based meals & beverages",
   "Hammam, pool, tennis court, fire pit access",
   "Shiatsu massage availability",
 ]
 
 const notIncluded = [
   "Flights to Marrakech (RAK airport)",
-  "Visa costs &amp; immigration fees",
-  "Medical &amp; travel insurance",
+  "Visa costs & immigration fees",
+  "Medical & travel insurance",
   "Activities outside the program",
   "Extra accommodation days before/after",
 ]
@@ -51,7 +51,7 @@ export function YTTInclusions() {
                   className="font-sans text-sm text-cacao/70 flex items-start gap-3"
                 >
                   <span className="text-gold flex-shrink-0">&#10003;</span>
-                  <span dangerouslySetInnerHTML={{ __html: item }} />
+                  {item}
                 </li>
               ))}
             </ul>
@@ -68,7 +68,7 @@ export function YTTInclusions() {
                   className="font-sans text-sm text-cacao/70 flex items-start gap-3"
                 >
                   <span className="text-cacao/30 flex-shrink-0">&#10007;</span>
-                  <span dangerouslySetInnerHTML={{ __html: item }} />
+                  {item}
                 </li>
               ))}
             </ul>

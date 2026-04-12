@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { staggerContainer, staggerItem } from "@/lib/animations"
 
@@ -59,11 +60,14 @@ export function YTTVenue() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="aspect-[21/9] bg-cream rounded-lg flex items-center justify-center mb-16"
+          className="relative aspect-[21/9] rounded-lg overflow-hidden mb-16"
         >
-          <p className="font-sans text-sm text-cacao/40">
-            Photo: Bab Zouina, Ourika Valley
-          </p>
+          <Image
+            src="/images/ytt/closing-1.jpg"
+            alt="Women gathered in ceremony at Bab Zouina"
+            fill
+            className="object-cover"
+          />
         </motion.div>
 
         <motion.div

@@ -8,8 +8,8 @@ const traits = [
   "You want to be student, healer, and guide simultaneously",
   "You yearn for a feminine-focused roadmap through the stages of your life",
   "You feel numb or disconnected from your womb and want to find your way back",
-  "You thrive in women&apos;s community and learn best in sisterhood",
-  "You&apos;re ready for the kind of training that changes your life, not just your resume",
+  "You thrive in women's community and learn best in sisterhood",
+  "You're ready for the kind of training that changes your life, not just your resume",
 ]
 
 export function YTTWhoIsFor() {
