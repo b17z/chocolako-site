@@ -4,7 +4,6 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
 import { useState, useEffect, useCallback } from "react"
 import { SectionWrapper } from "@/components/shared/motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { SectionDivider } from "@/components/shared/SectionDivider"
 
 interface Testimonial {
   id: string
@@ -85,11 +84,6 @@ export function Testimonials() {
 
   return (
     <>
-      <SectionDivider
-        variant="curve"
-        colorFrom="var(--color-espresso)"
-        colorTo="var(--color-jungle)"
-      />
       <SectionWrapper className="py-20 md:py-32 bg-jungle relative overflow-hidden">
         {/* Ethereal background elements */}
         <div

@@ -3,7 +3,6 @@
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
 import { staggerContainer, staggerItem, reduceMotion } from "@/lib/animations"
-import { SectionDivider } from "@/components/shared/SectionDivider"
 
 interface Pillar {
   number: string
@@ -82,11 +81,6 @@ export function Methodology() {
 
   return (
     <>
-      <SectionDivider
-        variant="organic"
-        colorFrom="var(--color-bone)"
-        colorTo="var(--color-espresso)"
-      />
       <section className="py-20 md:py-32 bg-espresso relative overflow-hidden">
         {/* Ambient background glow */}
         <div
