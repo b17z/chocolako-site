@@ -28,7 +28,7 @@ export function YTTStickyCTA() {
           </p>
         </div>
         <a
-          href="#registration"
+          href="#application"
           className="inline-block bg-gold hover:bg-gold/90 text-espresso font-sans font-medium px-6 py-2.5 rounded-full transition-colors text-sm"
         >
           Book Your Application Call

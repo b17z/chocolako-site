@@ -1,25 +1,25 @@
 import type { Metadata } from "next"
 import { YTTHero } from "@/components/ytt/YTTHero"
-import { YTTPainPoints } from "@/components/ytt/YTTPainPoints"
-import { YTTFeminineBody } from "@/components/ytt/YTTFeminineBody"
-import { YTTWombCenter } from "@/components/ytt/YTTWombCenter"
-import { YTTOverview } from "@/components/ytt/YTTOverview"
+import { YTTIntro } from "@/components/ytt/YTTIntro"
+import { YTTArchetypes } from "@/components/ytt/YTTArchetypes"
+import { YTTWhyDifferent } from "@/components/ytt/YTTWhyDifferent"
+import { YTTOutcomes } from "@/components/ytt/YTTOutcomes"
 import { YTTFounder } from "@/components/ytt/YTTFounder"
-import { YTTFaculty } from "@/components/ytt/YTTFaculty"
-import { YTTModules } from "@/components/ytt/YTTModules"
-import { YTTSchedule } from "@/components/ytt/YTTSchedule"
+import { YTTContainer } from "@/components/ytt/YTTContainer"
 import { YTTVenue } from "@/components/ytt/YTTVenue"
-import { YTTWhoIsFor } from "@/components/ytt/YTTWhoIsFor"
-import { YTTGains } from "@/components/ytt/YTTGains"
+import { YTTWhatYouLeaveWith } from "@/components/ytt/YTTWhatYouLeaveWith"
+import { YTTStructure } from "@/components/ytt/YTTStructure"
+import { YTTFit } from "@/components/ytt/YTTFit"
 import { YTTTestimonials } from "@/components/ytt/YTTTestimonials"
 import { YTTPricing } from "@/components/ytt/YTTPricing"
-import { YTTInclusions } from "@/components/ytt/YTTInclusions"
-import { YTTRegistration } from "@/components/ytt/YTTRegistration"
+import { YTTApplicationCall } from "@/components/ytt/YTTApplicationCall"
+import { YTTFAQ } from "@/components/ytt/YTTFAQ"
+import { YTTClosing } from "@/components/ytt/YTTClosing"
 import { YTTStickyCTA } from "@/components/ytt/YTTStickyCTA"
 import { Footer } from "@/components/sections/Footer"
 
 export const metadata: Metadata = {
-  title: "Womb Wisdom & Wellbeing YTT — Morocco | Innergy by Chocolako®",
+  title: "Womb Wisdom & Wellbeing YTT — Morocco | Innergy by Chocolako\u00ae",
   description:
     "A Yoga Alliance-recognized 200-hour Feminine Focused Yoga Teacher Training. 7 days online + 14 days in Ourika Valley, Morocco. August 1-22, 2026.",
 }
@@ -28,21 +28,21 @@ export default function WombWisdomYTTPage() {
   return (
     <main>
       <YTTHero />
-      <YTTPainPoints />
-      <YTTFeminineBody />
-      <YTTWombCenter />
-      <YTTOverview />
+      <YTTIntro />
+      <YTTArchetypes />
+      <YTTWhyDifferent />
+      <YTTOutcomes />
       <YTTFounder />
-      <YTTFaculty />
-      <YTTModules />
-      <YTTSchedule />
+      <YTTContainer />
       <YTTVenue />
-      <YTTWhoIsFor />
-      <YTTGains />
+      <YTTWhatYouLeaveWith />
+      <YTTStructure />
+      <YTTFit />
       <YTTTestimonials />
       <YTTPricing />
-      <YTTInclusions />
-      <YTTRegistration />
+      <YTTApplicationCall />
+      <YTTFAQ />
+      <YTTClosing />
       <YTTStickyCTA />
       <Footer />
     </main>
