@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
 import { YTTHero } from "@/components/ytt/YTTHero"
+import { YTTPainPoints } from "@/components/ytt/YTTPainPoints"
+import { YTTFeminineBody } from "@/components/ytt/YTTFeminineBody"
+import { YTTWombCenter } from "@/components/ytt/YTTWombCenter"
 import { Footer } from "@/components/sections/Footer"
 
 export const metadata: Metadata = {
@@ -12,6 +15,9 @@ export default function WombWisdomYTTPage() {
   return (
     <main>
       <YTTHero />
+      <YTTPainPoints />
+      <YTTFeminineBody />
+      <YTTWombCenter />
       <Footer />
     </main>
   )
