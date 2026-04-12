@@ -29,19 +29,15 @@ const tiers = [
 
 export function YTTPricing() {
   return (
-    <section className="bg-white py-24 md:py-32">
+    <section className="bg-sand py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="uppercase tracking-[0.2em] text-xs text-gold font-sans mb-4">
-            INVESTMENT
+            The Investment
           </p>
           <h2 className="font-serif text-3xl md:text-4xl text-cacao mb-4">
-            Choose Your Room
+            The investment in this premium service:
           </h2>
-          <p className="font-sans text-base text-cacao/60">
-            All rates include tuition, accommodation, meals, and transportation.
-            Payment plans available.
-          </p>
         </div>
 
         <motion.div
@@ -54,7 +50,7 @@ export function YTTPricing() {
           {tiers.map((tier) => (
             <motion.div
               key={tier.name}
-              className="bg-bone rounded-lg p-8 border border-cacao/10 flex flex-col"
+              className="bg-white rounded-lg p-8 border border-cacao/10 flex flex-col"
               variants={staggerItem}
             >
               <h3 className="font-serif text-xl text-cacao mb-1">
@@ -88,10 +84,7 @@ export function YTTPricing() {
         </motion.div>
 
         <p className="font-sans text-sm text-cacao/50 text-center">
-          Reserve your spot with a $1,000 deposit. Payment plans available on
-          request.
-          <br />
-          Payment via Stripe (credit card).
+          Spots are limited. Applications reviewed on a rolling basis.
         </p>
       </div>
     </section>
