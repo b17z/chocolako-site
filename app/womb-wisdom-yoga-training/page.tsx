@@ -7,6 +7,8 @@ import { YTTOverview } from "@/components/ytt/YTTOverview"
 import { YTTFounder } from "@/components/ytt/YTTFounder"
 import { YTTFaculty } from "@/components/ytt/YTTFaculty"
 import { YTTModules } from "@/components/ytt/YTTModules"
+import { YTTSchedule } from "@/components/ytt/YTTSchedule"
+import { YTTVenue } from "@/components/ytt/YTTVenue"
 import { Footer } from "@/components/sections/Footer"
 
 export const metadata: Metadata = {
@@ -26,6 +28,8 @@ export default function WombWisdomYTTPage() {
       <YTTFounder />
       <YTTFaculty />
       <YTTModules />
+      <YTTSchedule />
+      <YTTVenue />
       <Footer />
     </main>
   )
