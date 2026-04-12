@@ -2,80 +2,98 @@
 
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
-import { fadeInUp, reduceMotion } from "@/lib/animations"
-import { Button } from "@/components/ui/button"
+import { staggerContainer, staggerItem, reduceMotion } from "@/lib/animations"
 
 export function Founder() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const shouldReduceMotion = useReducedMotion()
 
-  const variants = shouldReduceMotion ? reduceMotion : fadeInUp
+  const container = shouldReduceMotion ? reduceMotion : staggerContainer
+  const item = shouldReduceMotion ? reduceMotion : staggerItem
 
   return (
     <section className="py-20 md:py-32 bg-bone">
-      <div className="container mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          variants={variants}
-          className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center max-w-6xl mx-auto"
+          variants={container}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
         >
-          {/* Image Placeholder - Left on desktop, Bottom on mobile (via order) */}
-          <motion.div
-            variants={variants}
-            className="order-2 md:order-1"
-          >
-            <div className="aspect-[4/5] bg-sand rounded-lg flex items-center justify-center">
-              <span className="text-espresso/30 font-serif text-lg">
-                Editorial Portrait
+          {/* Image Placeholder — Left on desktop, top on mobile */}
+          <motion.div variants={item} className="relative">
+            <div className="aspect-[3/4] bg-sand rounded relative flex items-center justify-center overflow-hidden">
+              <span className="text-espresso/30 font-sans text-sm tracking-wide">
+                Photo: Chocolako portrait
               </span>
+
+              {/* Overlay quote at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-espresso/60 to-transparent">
+                <p className="font-serif italic text-white/90 text-lg md:text-xl leading-relaxed">
+                  &ldquo;Your body has been keeping score. I teach women how to read it.&rdquo;
+                </p>
+              </div>
             </div>
           </motion.div>
 
-          {/* Bio Content - Right on desktop, Top on mobile (via order) */}
-          <motion.div
-            variants={variants}
-            className="order-1 md:order-2"
-          >
-            {/* Tag */}
-            <p className="text-gold uppercase tracking-[0.2em] text-sm mb-4">
-              The Founder
-            </p>
-
-            {/* Name */}
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-espresso mb-3">
-              Chocolako
+          {/* Editorial Bio — Right on desktop */}
+          <motion.div variants={item} className="flex flex-col justify-center">
+            <h2 className="font-serif text-3xl md:text-4xl text-cacao leading-snug mb-8">
+              There is something you should know about the woman behind this work.
             </h2>
 
-            {/* Title */}
-            <p className="text-cacao font-medium text-lg md:text-xl mb-8">
-              Somatic Leadership Guide & SFI Creator
-            </p>
-
-            {/* Bio Paragraphs */}
-            <div className="space-y-6 mb-10">
-              <p className="text-espresso/80 leading-relaxed">
-                Chocolako spent two decades in high-performance environments—from corporate boardrooms to international stages—before her body finally demanded she find another way.
+            <div className="space-y-5 mb-10">
+              <p className="font-sans text-base leading-relaxed text-espresso/80">
+                She didn&rsquo;t find this methodology because it called to her from a distance. She found it because her own body stopped cooperating with the life she had so carefully built, and she had to decide what that meant.
               </p>
 
-              <p className="text-espresso/80 leading-relaxed">
-                What emerged from that reckoning became Somatic Feminine Intelligence: a methodology weaving neuroscience, feminine wisdom traditions, and leadership application into a path for women ready to lead without burning out.
+              <p className="font-sans text-base leading-relaxed text-espresso/80">
+                Chocolako Agburu is the first woman in her lineage to say no to an arranged marriage. In 2021, twenty-five fibroids were removed from her womb. The surgeons recommended a hysterectomy. She said no to that too.
               </p>
 
-              <p className="text-espresso/80 leading-relaxed">
-                She has guided thousands of women across six continents through retreats, trainings, and transformational programs. Her work has been featured in Forbes, Vogue, and TEDx stages worldwide.
+              <p className="font-sans text-base leading-relaxed text-espresso/80">
+                What followed sent her to wisdom keepers in Mexico, Peru, Kenya, Nigeria, Morocco, and Egypt, and became the living foundation of Somatic Feminine Intelligence&trade;.
+              </p>
+
+              <p className="font-sans text-base leading-relaxed text-espresso/80">
+                She was equipped to go looking. She holds a BS from Vanderbilt University, an MPH from UC Berkeley, and an MBA from Bayes Business School London. She managed critical care at Harvard&rsquo;s Massachusetts General Hospital and led pharmaceutical market access for GlaxoSmithKline across London and Lagos.
+              </p>
+
+              <p className="font-sans text-base leading-relaxed text-espresso/80">
+                She left that world not because it failed her. Because she could see its edges, and she knew what was beyond them.
+              </p>
+
+              <p className="font-sans text-base leading-relaxed text-espresso/80">
+                Today she is a resident teacher at The Yoga Barn in Ubud, Bali, five years fibroid-free, and guiding women across four continents through the work that changed her own life.
+              </p>
+
+              <p className="font-sans text-base leading-relaxed text-espresso/80">
+                She is the author of <span className="italic">NEVER THE SAME WOMAN TWICE: The Science and Heart of Evolving into Yourself</span>.
               </p>
             </div>
 
-            {/* CTA Button */}
-            <Button
-              variant="outline"
-              className="border-cacao text-cacao hover:bg-cacao/10"
-            >
-              Learn More About Chocolako
-            </Button>
+            <p className="font-serif italic text-cacao text-lg leading-relaxed mb-10">
+              She doesn&rsquo;t teach what she studied. She teaches what she survived, integrated, and transformed.
+            </p>
+
+            <div className="flex flex-wrap gap-6">
+              <a
+                href="/about"
+                className="text-gold font-medium inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                Read the Full Story
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+              <a
+                href="/work-with-me"
+                className="text-gold font-medium inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
+                Work With Chocolako
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       </div>
