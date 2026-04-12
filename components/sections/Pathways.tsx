@@ -13,6 +13,7 @@ interface PathCard {
   forLine: string
   price: string
   cta: string
+  href?: string
   bg: "bg-white" | "bg-cream"
 }
 
@@ -50,6 +51,7 @@ const paths: PathCard[] = [
       "The woman ready for full immersion, a certification, and the kind of transformation that happens in a room of twenty women in Morocco.",
     price: "Investment discussed on application call · Payment plans available",
     cta: "→ Book Your Morocco Application Call",
+    href: "/womb-wisdom-yoga-training",
     bg: "bg-white",
   },
   {
@@ -182,7 +184,7 @@ export function Pathways() {
 
                 {/* CTA */}
                 <a
-                  href="#"
+                  href={path.href || "#"}
                   className="text-rust hover:text-gold transition-colors font-medium text-sm"
                 >
                   {path.cta}

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const inPersonLinks = [
-  { href: "/womb-wisdom-morocco", label: "Womb Wisdom YTT — Morocco (August 2026)" },
+  { href: "/womb-wisdom-yoga-training", label: "Womb Wisdom YTT — Morocco (August 2026)" },
   { href: "/womb-wisdom-bali", label: "Womb Wisdom YTT — Bali (October 2026)" },
   { href: "/cacao-training", label: "Cacao Ceremony Facilitation Training" },
   { href: "/sfi-immersions", label: "SFI Immersions and Retreats" },
