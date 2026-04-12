@@ -1,142 +1,113 @@
 "use client"
 
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
+import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations"
 import { Button } from "@/components/ui/button"
-import { AnimatedText } from "@/components/shared/motion"
-import { ParticleField } from "@/components/shared/ParticleField"
-import { GlowText } from "@/components/shared/GlowText"
-import dynamic from "next/dynamic"
-
-// Lazy load 3D component
-const SacredGeometry = dynamic(
-  () => import("@/components/three/SacredGeometry").then((mod) => mod.SacredGeometry),
-  { ssr: false }
-)
 
 export function Hero() {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  })
-  const shouldReduceMotion = useReducedMotion()
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-
   return (
-    <section
-      ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Background with parallax */}
-      <motion.div
-        className="absolute inset-0 bg-espresso"
-        style={{ y: shouldReduceMotion ? 0 : y }}
-      >
-        {/* Layered gradient for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/80 via-espresso/60 to-espresso" />
-
-        {/* Radial glow - doorway effect - MORE VISIBLE */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse 80% 50% at 50% 30%, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0.1) 30%, transparent 60%)",
-          }}
-        />
-
-        {/* Secondary ambient glows - STRONGER */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "radial-gradient(ellipse at 20% 80%, rgba(139,90,43,0.3) 0%, transparent 40%), radial-gradient(ellipse at 80% 70%, rgba(74,93,35,0.25) 0%, transparent 40%)",
-          }}
-        />
-
-        {/* Animated pulsing glow behind content */}
-        <motion.div
-          className="absolute inset-0"
-          animate={{
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{
-            background: "radial-gradient(circle at 50% 50%, rgba(212,175,55,0.15) 0%, transparent 40%)",
-          }}
-        />
-      </motion.div>
-
-      {/* 3D Sacred Geometry */}
-      <div className="absolute inset-0 opacity-20">
-        <SacredGeometry />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background — placeholder for full-bleed ceremony photo */}
+      <div className="absolute inset-0 bg-espresso">
+        <div className="absolute inset-0 bg-espresso/60" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="text-sand/40 text-sm tracking-widest uppercase">
+            Photo: Chocolako in ceremony
+          </p>
+        </div>
       </div>
 
-      {/* Floating particles overlay */}
-      <ParticleField count={30} />
+      {/* Warm semi-transparent overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-espresso/70 via-espresso/50 to-espresso/80" />
 
       {/* Content */}
       <motion.div
-        className="relative z-10 text-center px-6 max-w-4xl"
-        style={{ opacity: shouldReduceMotion ? 1 : opacity }}
+        className="relative z-10 px-6 py-24 max-w-2xl mx-auto text-center"
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
       >
+        {/* Small caps label */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-gold uppercase tracking-[0.3em] text-sm mb-6"
-          style={{
-            textShadow: "0 0 30px rgba(212,175,55,0.6), 0 0 60px rgba(212,175,55,0.3)",
-          }}
+          variants={staggerItem}
+          className="uppercase tracking-[0.3em] text-xs text-gold font-sans mb-8"
         >
-          Somatic Feminine Intelligence
+          Innergy by Chocolako®
         </motion.p>
 
-        <GlowText
-          as="h1"
-          className="font-serif text-4xl md:text-6xl lg:text-7xl text-bone leading-tight"
-          glowColor="rgba(212, 175, 55, 0.4)"
+        {/* Headline */}
+        <motion.h1
+          variants={staggerItem}
+          className="font-serif text-4xl md:text-6xl lg:text-7xl text-bone leading-tight mb-6"
         >
-          <AnimatedText
-            as="span"
-            text="Reclaim the Body as Sacred Ground for Leadership"
-            className="inline"
-          />
-        </GlowText>
+          Journey Back to Yourself.
+        </motion.h1>
 
+        {/* Italic subhead */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-sand text-lg md:text-xl mt-8 max-w-2xl mx-auto"
+          variants={staggerItem}
+          className="font-serif italic text-lg md:text-xl text-sand mb-12"
         >
-          Transform your relationship with power through somatic intelligence,
-          feminine lineage, and ceremonial wisdom.
+          Where the science of health meets the soul of healing.
         </motion.p>
 
+        {/* Body paragraphs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
+          variants={staggerItem}
+          className="space-y-4 text-sand/90 font-sans text-base md:text-lg leading-relaxed mb-10"
         >
-          <motion.div
+          <p>High performance taught you to override your body.</p>
+          <p>
+            You built the career. Led the teams. Managed the complexity.
+          </p>
+          <p>
+            And somewhere inside all that capability, something went quiet.
+          </p>
+          <p>
+            Not a breakdown. Just a steady, low question that follows you into
+            meetings and into the mirror.
+          </p>
+        </motion.div>
+
+        {/* Pull quote */}
+        <motion.blockquote
+          variants={staggerItem}
+          className="border-l-4 border-gold pl-6 my-12 text-left"
+        >
+          <p className="font-serif italic text-xl md:text-2xl text-bone">
+            &ldquo;Is this actually it?&rdquo;
+          </p>
+        </motion.blockquote>
+
+        {/* Closing */}
+        <motion.p
+          variants={staggerItem}
+          className="text-sand/90 font-sans text-base md:text-lg leading-relaxed mb-12"
+        >
+          If you&apos;ve felt that, you&apos;re not lost. You&apos;re aware and
+          ready for something that feels better.
+        </motion.p>
+
+        {/* CTA buttons */}
+        <motion.div
+          variants={staggerItem}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <motion.a
+            href="#quiz"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <Button
               size="lg"
-              className="bg-gold hover:bg-gold/90 text-espresso font-medium px-8 shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] transition-shadow"
+              className="bg-gold hover:bg-gold/90 text-espresso font-medium px-8"
             >
-              Enter Innergy
+              Find Your Path
             </Button>
-          </motion.div>
-          <motion.div
+          </motion.a>
+          <motion.a
+            href="#paths"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -146,31 +117,9 @@ export function Hero() {
               variant="outline"
               className="border-bone text-bone bg-transparent hover:bg-bone hover:text-espresso px-8"
             >
-              Explore In-Person
+              Explore the Work
             </Button>
-          </motion.div>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll indicator with breathing animation */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{
-            y: [0, 8, 0],
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 rounded-full border-2 border-bone/40 flex justify-center pt-2"
-          style={{
-            boxShadow: "0 0 15px rgba(255,255,255,0.1)",
-          }}
-        >
-          <motion.div className="w-1 h-2 bg-bone/60 rounded-full" />
+          </motion.a>
         </motion.div>
       </motion.div>
 
