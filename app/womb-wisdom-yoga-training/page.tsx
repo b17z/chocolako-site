@@ -12,6 +12,8 @@ import { YTTVenue } from "@/components/ytt/YTTVenue"
 import { YTTWhoIsFor } from "@/components/ytt/YTTWhoIsFor"
 import { YTTGains } from "@/components/ytt/YTTGains"
 import { YTTTestimonials } from "@/components/ytt/YTTTestimonials"
+import { YTTPricing } from "@/components/ytt/YTTPricing"
+import { YTTInclusions } from "@/components/ytt/YTTInclusions"
 import { Footer } from "@/components/sections/Footer"
 
 export const metadata: Metadata = {
@@ -36,6 +38,8 @@ export default function WombWisdomYTTPage() {
       <YTTWhoIsFor />
       <YTTGains />
       <YTTTestimonials />
+      <YTTPricing />
+      <YTTInclusions />
       <Footer />
     </main>
   )
