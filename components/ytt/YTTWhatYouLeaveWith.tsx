@@ -5,9 +5,14 @@ import { staggerContainer, staggerItem } from "@/lib/animations"
 
 const credentialOutcomes = [
   {
-    title: "Yoga Alliance-recognized 50-hour certification",
+    title: "A full 200-hour Yoga Alliance-recognized certification",
     description:
-      "in Womb Wisdom & Wellbeing methodology.",
+      "in Womb Wisdom & Wellbeing methodology — 200 CE hours that count toward your RYT registration.",
+  },
+  {
+    title: "Eligibility to register as RYT-200 from your graduation day.",
+    description:
+      "Upload your certificate of completion and the Yoga Alliance application (plus their annual fee) and you are registered. Same-day eligible.",
   },
   {
     title: "Legal standing",

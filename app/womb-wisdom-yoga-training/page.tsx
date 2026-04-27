@@ -39,9 +39,9 @@ export default function WombWisdomYTTPage() {
       <YTTStructure />
       <YTTFit />
       <YTTTestimonials />
-      <YTTPricing />
       <YTTApplicationCall />
       <YTTFAQ />
+      <YTTPricing />
       <YTTClosing />
       <YTTStickyCTA />
       <Footer />

@@ -27,9 +27,14 @@ const faqs = [
       "You complete pre-immersion online modules in the weeks before August 1. These are self-paced within a set window and include Google Meet video instruction, reading, and cohort connection calls. The 14-day immersive training at Bab Zouina runs August 8-22, 2026 with full daily programming. Post-training integration support is delivered online after you return home.",
   },
   {
+    question: "Is this a full 200-hour YTT? Will I be able to register as RYT?",
+    answer:
+      "Yes to both. This is a full 200-hour Yoga Alliance-recognized Yoga Teacher Training — 200 CE (continuing education) hours. You can register as RYT-200 with Yoga Alliance the same day you graduate: upload your certificate of completion, submit the Yoga Alliance application, pay their annual fee, and you are registered.",
+  },
+  {
     question: "How is this different from a standard 200-hour YTT?",
     answer:
-      "A standard 200-hour YTT qualifies you to teach general yoga. This training qualifies you to teach within a specialized methodology specifically designed for women's bodies, womb health, trauma-informed practice, and feminine embodiment. Many graduates of this training hold existing 200-hour certifications and describe this as the missing piece that made their existing credential make sense and meaningful.",
+      "A standard 200-hour YTT qualifies you to teach general yoga. This training is also a full 200-hour Yoga Alliance-recognized certification, but it qualifies you to teach within a specialized methodology designed for women's bodies, womb health, trauma-informed practice, and feminine embodiment. Many graduates of this training hold existing 200-hour certifications and describe this as the missing piece that made their existing credential make sense.",
   },
   {
     question: "What is the investment?",
